@@ -1,19 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8">
-    <meta http-equiv=" X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>我的笔记</title>
     <style>
-        body{
+        body {
+            background-color: #282c34;
+            color: white; /* 设置字体颜色为白色以便在深色背景上可见 */
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* 使内容居中对齐 */
+        }
+        .centered-links {
             text-align: center;
         }
+        .centered-links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px; /* 使链接之间有点间距 */
+            font-size: 1.2em; /* 增加字体大小，便于阅读 */
+        }
     </style>
-    
-    <a href = "https://the-cooler.github.io/DataStructure"> 数据结构与算法 </a>
-    <a href = "https://the-cooler.github.io/javaLearn"> Java学习笔记 </a>
 </head>
 <body>
+    <div class="centered-links">
+        <a href="https://the-cooler.github.io/DataStructure" target="_blank">数据结构与算法</a>
+        <a href="https://the-cooler.github.io/javaLearn" target="_blank">Java学习笔记</a>
+    </div>
+</body>
+</html>
