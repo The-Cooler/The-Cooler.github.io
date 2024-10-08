@@ -1,11 +1,19 @@
 # 数据结构与算法
 
-//添加一个按钮，控制黑夜模式 
-<button onclick="document.body.style.backgroundColor='#282c34'">黑夜模式</button>
+//添加一个按钮，来回切换黑夜模式 
+<button onclick="toggleNightMode()">切换黑夜模式</button>
 
+<script>
+function toggleNightMode() {
+  var body = document.body;
+  body.classList.toggle("night-mode");
+}
+</script>
+
+## 目录
+* [链表](#链表)
 
 ## 链表
-* [链表](#链表)
   * [1.创建链表](#1创建链表)
   * [2.表的遍历](#2表的遍历)
   * [3.删除](#3删除)
