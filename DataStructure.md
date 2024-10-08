@@ -1,7 +1,13 @@
 # 数据结构与算法
 
-//添加一个按钮，来回切换黑夜模式 
 <button onclick="toggleNightMode()">切换黑夜模式</button>
+
+<style>
+body.night-mode {
+    background-color: #282c34; /* 设置黑夜模式背景色 */
+    color: #fff; /* 设置黑夜模式字体颜色 */
+}
+</style>
 
 <script>
 function toggleNightMode() {
