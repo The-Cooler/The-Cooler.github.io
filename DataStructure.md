@@ -14,7 +14,8 @@ function toggleNightMode() {
   var body = document.body;
   body.classList.toggle("night-mode");
 }
-</script>
+</script>   
+
 
 ## 目录
 * [链表](#链表)
@@ -49,7 +50,8 @@ int main(){
     head = NULL;
     return 0;
 }
-```
+```   
+
 #### 2.表的遍历
 ```c
 List* p = *head;
@@ -59,8 +61,10 @@ while(判断条件) {
 }
 ```
 常见条件：
-> 1.p->next != NULL     链表到最末端
-> 2.p != head           不包含头指针
+> 1.p->next != NULL     链表到最末端   
+
+> 2.p != head           不包含头指针   
+
 #### 3.删除
 ```c
 void delete(List** head, int pos){
@@ -76,7 +80,8 @@ void delete(List** head, int pos){
 
     p->next = p->next->next;
 }
-```
+```     
+
 #### 4.插入
 ```c
 //始终将下一个元素放到head后面，后面的元素不动
@@ -96,9 +101,12 @@ void finally_insert(List** head, int data) {//尾插法
     new_node->next = NULL;
     new_node->data = data;
 }
-```
-**<u><font color = red>易错提醒:</font></u>**
-> 1. 传参使用**head，而不是*head，因为*head无法修改一级指针的值，所以要传二级指针
+```   
+
+**<u><font color = red>易错提醒:</font></u>**   
+
+> 1. 传参使用**head，而不是*head，因为*head无法修改一级指针的值，所以要传二级指针   
+
 > 2. 头指针要用另一指针代替，是为了避免头指针丢失，不能为了偷懒直接用头指针迭代
 
 #### 完整代码与演示
