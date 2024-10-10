@@ -181,115 +181,290 @@ do{
 
 ### 特殊类   
 **1. String**   
-```java
-public class lang{
-    public final class String{
-        //构造函数
-        public String();
-        public String(char[] value);
-        public String(byte[] value);
-        public String(byte[] value,int offset,int length);
-        public String(String original);
+##### Class `lang.String`
 
-        //返回指定索引处的字符
-        public char charAt(int index);
+`java.lang.String`
 
-        //返回字符串长度
-        public int length();
+这个类模拟了 Java 标准库中的 `String` 类，提供了一系列用于操作字符串的方法。
 
-        //判断字符串是否为空，length() == 0则返回true
-        public boolean isEmpty();
+**构造方法**
 
-        //判断字符串是否相等(比较的是字符串的值)，忽略大小写
-        public boolean equals(Object anObject);
+- **`String()`**
+  - **描述**: 创建一个新的空字符串实例。
 
-        //按字典序比较两个字符串，返回值：0，字符串相等；正数，this字符串大于anotherString；负数，this字符串小于anotherString
-        public int compareTo(String anotherString);
+- **`String(char[] value)`**
+  - **描述**: 通过字符数组创建一个新的字符串实例。
+  - **参数**:
+    - `value`: 用于创建字符串的字符数组。
 
-        //将字符串连接起来，this字符串在前
-        public String concat(String str);
+- **`String(byte[] value)`**
+  - **描述**: 通过字节数组创建一个新的字符串实例。
+  - **参数**:
+    - `value`: 用于创建字符串的字节数组。
 
-        //定位子字符串的位置
-        public int indexOf(String str);
+- **`String(byte[] value, int offset, int length)`**
+  - **描述**: 通过字节数组的指定部分创建一个新的字符串。
+  - **参数**:
+    - `value`: 用于创建字符串的字节数组。
+    - `offset`: 转换开始点。
+    - `length`: 要转换的字节数。
 
-        //返回从指定索引开始到结尾的子字符串
-        public String substring(int beginIndex);
+- **`String(String original)`**
+  - **描述**: 复制现有字符串。
+  - **参数**:
+    - `original`: 要复制的字符串。
 
-        //返回从指定索引开始到指定索引结束的子字符串
-        public String substring(int beginIndex,int endIndex);
+**方法**
 
-        //替换字符串中的字符
-        public String replace(char oldChar,char newChar);
+- **`char charAt(int index)`**
+  - **描述**: 返回指定索引处的字符。
+  - **参数**:`index`: 字符索引。
+  - **返回**: 字符。
 
-        //按照正则表达式分割字符串
-        public String[] split(String regex);
+- **`int length()`**
+  - **描述**: 返回字符串长度。
+  - **返回**: 字符串的长度。
 
-        //将字符串转换为小写
-        public String toLowerCase();
+- **`boolean isEmpty()`**
+  - **描述**: 如果字符串为空（`length() == 0`），返回 `true`。
 
-        //将字符串转换为大写
-        public String topperCase();
+- **`boolean equals(Object anObject)`**
+  - **描述**: 比较两个字符串是否相等，忽略大小写。
+  - **参数**:
+    - `anObject`: 与当前字符串比较的对象。
+  - **返回**: 布尔值，表示字符串是否相等。
 
-        //去除字符串两端的空白符
-        public String trim();
+- **`int compareTo(String anotherString)`**
+  - **描述**: 按字典序比较两个字符串。
+  - **参数**:
+    - `anotherString`: 要比较的字符串。
+  - **返回**: 整数，0 表示相等，正数表示大于，负数表示小于。
 
-        //将字符串转换为字节数组
-        public void getBytes(int srcBegin,int srcEnd,byte[] dst,int dstBegin);
+- **`String concat(String str)`**
+  - **描述**: 将指定字符串连接到此字符串的结尾。
+  - **参数**:
+    - `str`: 连接的字符串。
+  - **返回**: 新的字符串。
 
-        //将字节数组转换为字符串
-        public void getChars(int srcBegin,int srcEnd,char[] dst,int dstBegin);
+- **`int indexOf(String str)`**
+  - **描述**: 返回子字符串的索引。
+  - **参数**:
+    - `str`: 子字符串。
+  - **返回**: 子字符串的起始索引。
 
-        //返回字符串的规范化版本
-        public String intern();
-    }
-}
-```   
+- **`String substring(int beginIndex)`**
+  - **描述**: 返回从指定索引开始到结尾的子字符串。
+  - **参数**:
+    - `beginIndex`: 起始索引。
+  - **返回**: 新的子字符串。
+
+- **`String substring(int beginIndex, int endIndex)`**
+  - **描述**: 返回从指定索引开始到结束的子字符串。
+  - **参数**:
+    - `beginIndex`: 起始索引。
+    - `endIndex`: 结束索引。
+  - **返回**: 新的子字符串。
+
+- **`String replace(char oldChar, char newChar)`**
+  - **描述**: 替换字符串中的字符。
+  - **参数**:
+    - `oldChar`: 被替换的字符。
+    - `newChar`: 替换的字符。
+  - **返回**: 新的字符串。
+
+- **`String[] split(String regex)`**
+  - **描述**: 根据正则表达式分割字符串。
+  - **参数**:
+    - `regex`: 正则表达式。
+  - **返回**: 字符串数组。
+
+- **`String toLowerCase()`**
+  - **描述**: 将字符串转换为小写。
+  - **返回**: 小写字符串。
+
+- **`String toUpperCase()`**
+  - **描述**: 将字符串转换为大写。
+  - **返回**: 大写字符串。
+
+- **`String trim()`**
+  - **描述**: 去除字符串两端的空白符。
+  - **返回**: 修剪后的字符串。
+
+- **`void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin)`**
+  - **描述**: 将字符转换为字节并存储到字节数组中。
+  - **参数**:
+    - `srcBegin`: 起始索引。
+    - `srcEnd`: 结束索引。
+    - `dst`: 目标字节数组。
+    - `dstBegin`: 目标开始索引。
+
+- **`void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)`**
+  - **描述**: 将字符存储到字符数组中。
+  - **参数**:
+    - `srcBegin`: 起始索引。
+    - `srcEnd`: 结束索引。
+    - `dst`: 目标字符数组。
+    - `dstBegin`: 目标开始索引。
+
+- **`String intern()`**
+  - **描述**: 返回字符串的规范化版本。
+  - **返回**: 规范化字符串。
 
 **注意**：String用==比较时，比较的是地址，而不是值。
 
 **2. Math**   
-```java
-public class lang{
-    public class Math{
-        //返回绝对值
-        public static double abs(double a);
-        public static float abs(float a);
-        public static int abs(int a);
-        public static long abs(long a);
+##### Class `lang.Math`
 
-        //返回最大值
-        public static double max(double a,double b);
-        public static float max(float a,float b);
-        public static int max(int a,int b);
-        public static long max(long a,long b);
+`java.lang.Math`
 
-        //返回最小值
-        public static double min(double a,double b);
-        public static float min(float a,float b);
-        public static int min(int a,int b);
-        public static long min(long a,long b);
+这个类模拟了 Java 标准库中的 `Math` 类，提供了一系列用于数学运算的方法。
 
-        //返回向上取整
-        public static double ceil(double a);
-        public static float ceil(float a);
+**方法**
 
-        //返回向下取整
-        public static double floor(double a);
-        public static float floor(float a);
+- **`static double abs(double a)`**
+  - **描述**: 返回绝对值。
+  - **参数**:
+    - `a`: 需要绝对值的双精度浮点数。
+  - **返回**: `a` 的绝对值。
 
-        //返回向上取整或向下取整
-        public static double round(double a);
-        public static float round(float a);
+- **`static float abs(float a)`**
+  - **描述**: 返回绝对值。
+  - **参数**:
+    - `a`: 需要绝对值的单精度浮点数。
+  - **返回**: `a` 的绝对值。
 
-        //返回随机数
-        public static double random();
+- **`static int abs(int a)`**
+  - **描述**: 返回绝对值。
+  - **参数**:
+    - `a`: 需要绝对值的整数。
+  - **返回**: `a` 的绝对值。
 
-        //返回两个数的最大公约数
-        public static int gcd(int a,int b);
-        public static long gcd(long a,long b);
+- **`static long abs(long a)`**
+  - **描述**: 返回绝对值。
+  - **参数**:
+    - `a`: 需要绝对值的长整数。
+  - **返回**: `a` 的绝对值。
 
-        //返回两个数的最小公倍数
-        public static int lcm(int a,int b);
-        public static long lcm(long a,long b);
-    }
-}
+- **`static double max(double a, double b)`**
+  - **描述**: 返回两个双精度浮点数的最大值。
+  - **参数**:
+    - `a`: 第一个双精度浮点数。
+    - `b`: 第二个双精度浮点数。
+  - **返回**: `a` 和 `b` 中的较大值。
+
+- **`static float max(float a, float b)`**
+  - **描述**: 返回两个单精度浮点数的最大值。
+  - **参数**:
+    - `a`: 第一个单精度浮点数。
+    - `b`: 第二个单精度浮点数。
+  - **返回**: `a` 和 `b` 中的较大值。
+
+- **`static int max(int a, int b)`**
+  - **描述**: 返回两个整数的最大值。
+  - **参数**:
+    - `a`: 第一个整数。
+    - `b`: 第二个整数。
+  - **返回**: `a` 和 `b` 中的较大值。
+
+- **`static long max(long a, long b)`**
+  - **描述**: 返回两个长整数的最大值。
+  - **参数**:
+    - `a`: 第一个长整数。
+    - `b`: 第二个长整数。
+  - **返回**: `a` 和 `b` 中的较大值。
+
+- **`static double min(double a, double b)`**
+  - **描述**: 返回两个双精度浮点数的最小值。
+  - **参数**:
+    - `a`: 第一个双精度浮点数。
+    - `b`: 第二个双精度浮点数。
+  - **返回**: `a` 和 `b` 中的较小值。
+
+- **`static float min(float a, float b)`**
+  - **描述**: 返回两个单精度浮点数的最小值。
+  - **参数**:
+    - `a`: 第一个单精度浮点数。
+    - `b`: 第二个单精度浮点数。
+  - **返回**: `a` 和 `b` 中的较小值。
+
+- **`static int min(int a, int b)`**
+  - **描述**: 返回两个整数的最小值。
+  - **参数**:
+    - `a`: 第一个整数。
+    - `b`: 第二个整数。
+  - **返回**: `a` 和 `b` 中的较小值。
+
+- **`static long min(long a, long b)`**
+  - **描述**: 返回两个长整数的最小值。
+  - **参数**:
+    - `a`: 第一个长整数。
+    - `b`: 第二个长整数。
+  - **返回**: `a` 和 `b` 中的较小值。
+
+- **`static double ceil(double a)`**
+  - **描述**: 返回大于或等于 `a` 的最小整数值。
+  - **参数**:
+    - `a`: 要向上取整的双精度浮点数。
+  - **返回**: 向上取整后的整数。
+
+- **`static float ceil(float a)`**
+  - **描述**: 返回大于或等于 `a` 的最小整数值。
+  - **参数**:
+    - `a`: 要向上取整的单精度浮点数。
+  - **返回**: 向上取整后的整数。
+
+- **`static double floor(double a)`**
+  - **描述**: 返回小于或等于 `a` 的最大整数值。
+  - **参数**:
+    - `a`: 要向下取整的双精度浮点数。
+  - **返回**: 向下取整后的整数。
+
+- **`static float floor(float a)`**
+  - **描述**: 返回小于或等于 `a` 的最大整数值。
+  - **参数**:
+    - `a`: 要向下取整的单精度浮点数。
+  - **返回**: 向下取整后的整数。
+
+- **`static double round(double a)`**
+  - **描述**: 对 `a` 进行四舍五入。
+  - **参数**:
+    - `a`: 要四舍五入的双精度浮点数。
+  - **返回**: 四舍五入后的整数。
+
+- **`static float round(float a)`**
+  - **描述**: 对 `a` 进行四舍五入。
+  - **参数**:
+    - `a`: 要四舍五入的单精度浮点数。
+  - **返回**: 四舍五入后的整数。
+
+- **`static double random()`**
+  - **描述**: 返回一个介于 [0.0, 1.0) 的随机数。
+  - **返回**: 随机生成的双精度浮点数。
+
+- **`static int gcd(int a, int b)`**
+  - **描述**: 返回两个整数的最大公约数。
+  - **参数**:
+    - `a`: 第一个整数。
+    - `b`: 第二个整数。
+  - **返回**: 最大公约数。
+
+- **`static long gcd(long a, long b)`**
+  - **描述**: 返回两个长整数的最大公约数。
+  - **参数**:
+    - `a`: 第一个长整数。
+    - `b`: 第二个长整数。
+  - **返回**: 最大公约数。
+
+- **`static int lcm(int a, int b)`**
+  - **描述**: 返回两个整数的最小公倍数。
+  - **参数**:
+    - `a`: 第一个整数。
+    - `b`: 第二个整数。
+  - **返回**: 最小公倍数。
+
+- **`static long lcm(long a, long b)`**
+  - **描述**: 返回两个长整数的最小公倍数。
+  - **参数**:
+    - `a`: 第一个长整数。
+    - `b`: 第二个长整数。
+  - **返回**: 最小公倍数。
