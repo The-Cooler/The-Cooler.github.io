@@ -197,108 +197,108 @@ do{
 
 ##### **构造方法**
 
-<font color=blue>**`String()`**</font>  
+<span style="color: blue;">**`String()`**</span>  
 - **描述**: 创建一个新的空字符串实例。
 
-<font color=blue>**`String(char[] value)`**</font>  
+<span style="color: blue;">**`String(char[] value)`**</span>  
 - **描述**: 通过字符数组创建一个新的字符串实例。
 - **参数**:
   - `value`: 用于创建字符串的字符数组。
 
-<font color=blue>**`String(byte[] value)`**</font>  
+<span style="color: blue;">**`String(byte[] value)`**</span>  
 - **描述**: 通过字节数组创建一个新的字符串实例。
 - **参数**:
   - `value`: 用于创建字符串的字节数组。
 
-<font color=blue>**`String(byte[] value, int offset, int length)`**</font>  
+<span style="color: blue;">**`String(byte[] value, int offset, int length)`**</span>  
 - **描述**: 通过字节数组的指定部分创建一个新的字符串。
 - **参数**:
   - `value`: 用于创建字符串的字节数组。
   - `offset`: 转换开始点。
   - `length`: 要转换的字节数。
 
-<font color=blue>**`String(String original)`**</font>  
+<span style="color: blue;">**`String(String original)`**</span>  
 - **描述**: 复制现有字符串。
 - **参数**:
   - `original`: 要复制的字符串。
 
 ##### **方法**
 
-<font color=blue>**`char charAt(int index)`**</font>  
+<span style="color: blue;">**`char charAt(int index)`**</span>  
 - **描述**: 返回指定索引处的字符。
 - **参数**: `index`: 字符索引。
 - **返回**: 字符。
 
-<font color=blue>**`int length()`**</font>  
+<span style="color: blue;">**`int length()`**</span>  
 - **描述**: 返回字符串长度。
 - **返回**: 字符串的长度。
 
-<font color=blue>**`boolean isEmpty()`**</font>  
+<span style="color: blue;">**`boolean isEmpty()`**</span>  
 - **描述**: 如果字符串为空（`length() == 0`），返回 `true`。
 
-<font color=blue>**`boolean equals(Object anObject)`**</font>  
-- **描述**: 比较两个字符串是否相等，忽略大小写。
+<span style="color: blue;">**`boolean equals(Object anObject)`**</span>  
+- **描述**: 比较两个字符串是否相等。
 - **参数**:
   - `anObject`: 与当前字符串比较的对象。
 - **返回**: 布尔值，表示字符串是否相等。
 
-<font color=blue>**`int compareTo(String anotherString)`**</font>  
+<span style="color: blue;">**`int compareTo(String anotherString)`**</span>  
 - **描述**: 按字典序比较两个字符串。
 - **参数**:
   - `anotherString`: 要比较的字符串。
 - **返回**: 整数，0 表示相等，正数表示大于，负数表示小于。
 
-<font color=blue>**`String concat(String str)`**</font>  
+<span style="color: blue;">**`String concat(String str)`**</span>  
 - **描述**: 将指定字符串连接到此字符串的结尾。
 - **参数**:
   - `str`: 连接的字符串。
 - **返回**: 新的字符串。
 
-<font color=blue>**`int indexOf(String str)`**</font>  
+<span style="color: blue;">**`int indexOf(String str)`**</span>  
 - **描述**: 返回子字符串的索引。
 - **参数**:
   - `str`: 子字符串。
 - **返回**: 子字符串的起始索引。
 
-<font color=blue>**`String substring(int beginIndex)`**</font>  
+<span style="color: blue;">**`String substring(int beginIndex)`**</span>  
 - **描述**: 返回从指定索引开始到结尾的子字符串。
 - **参数**:
   - `beginIndex`: 起始索引。
 - **返回**: 新的子字符串。
 
-<font color=blue>**`String substring(int beginIndex, int endIndex)`**</font>  
+<span style="color: blue;">**`String substring(int beginIndex, int endIndex)`**</span>  
 - **描述**: 返回从指定索引开始到结束的子字符串。
 - **参数**:
   - `beginIndex`: 起始索引。
   - `endIndex`: 结束索引。
 - **返回**: 新的子字符串。
 
-<font color=blue>**`String replace(char oldChar, char newChar)`**</font>  
+<span style="color: blue;">**`String replace(char oldChar, char newChar)`**</span>  
 - **描述**: 替换字符串中的字符。
 - **参数**:
   - `oldChar`: 被替换的字符。
   - `newChar`: 替换的字符。
 - **返回**: 新的字符串。
 
-<font color=blue>**`String[] split(String regex)`**</font>  
+<span style="color: blue;">**`String[] split(String regex)`**</span>  
 - **描述**: 根据正则表达式分割字符串。
 - **参数**:
   - `regex`: 正则表达式。
 - **返回**: 字符串数组。
 
-<font color=blue>**`String toLowerCase()`**</font>  
+<span style="color: blue;">**`String toLowerCase()`**</span>  
 - **描述**: 将字符串转换为小写。
 - **返回**: 小写字符串。
 
-<font color=blue>**`String toUpperCase()`**</font>  
+<span style="color: blue;">**`String toUpperCase()`**</span>  
 - **描述**: 将字符串转换为大写。
 - **返回**: 大写字符串。
 
-<font color=blue>**`String trim()`**</font>  
+<span style="color: blue;">**`String trim()`**</span>  
 - **描述**: 去除字符串两端的空白符。
 - **返回**: 修剪后的字符串。
 
-<font color=blue>**`void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin)`**</font>  
+<span style="color: blue;">**`void getBytes(int srcBegin, int srcEnd, byte[] dst, int dstBegin)`**</span>  
 - **描述**: 将字符转换为字节并存储到字节数组中。
 - **参数**:
   - `srcBegin`: 起始索引。
@@ -306,7 +306,7 @@ do{
   - `dst`: 目标字节数组。
   - `dstBegin`: 目标开始索引。
 
-<font color=blue>**`void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)`**</font>  
+<span style="color: blue;">**`void getChars(int srcBegin, int srcEnd, char[] dst, int dstBegin)`**</span>  
 - **描述**: 将字符存储到字符数组中。
 - **参数**:
   - `srcBegin`: 起始索引。
@@ -314,158 +314,158 @@ do{
   - `dst`: 目标字符数组。
   - `dstBegin`: 目标开始索引。
 
-<font color=blue>**`String intern()`**</font>  
+<span style="color: blue;">**`String intern()`**</span>  
 - **描述**: 返回字符串的规范化版本。
 - **返回**: 规范化字符串。
 
-##### **注意**：String用==比较时，比较的是地址，而不是值。
+##### **注意**: String用==比较时，比较的是地址，而不是值。
 
 #### **2. Math**
 
 ##### **方法**
 
-<font color=blue>**`static double abs(double a)`**</font>  
+<span style="color: blue;">**`static double abs(double a)`**</span>  
 - **描述**: 返回绝对值。
 - **参数**:
   - `a`: 需要绝对值的双精度浮点数。
 - **返回**: `a` 的绝对值。
 
-<font color=blue>**`static float abs(float a)`**</font>  
+<span style="color: blue;">**`static float abs(float a)`**</span>  
 - **描述**: 返回绝对值。
 - **参数**:
   - `a`: 需要绝对值的单精度浮点数。
 - **返回**: `a` 的绝对值。
 
-<font color=blue>**`static int abs(int a)`**</font>  
+<span style="color: blue;">**`static int abs(int a)`**</span>  
 - **描述**: 返回绝对值。
 - **参数**:
   - `a`: 需要绝对值的整数。
 - **返回**: `a` 的绝对值。
 
-<font color=blue>**`static long abs(long a)`**</font>  
+<span style="color: blue;">**`static long abs(long a)`**</span>  
 - **描述**: 返回绝对值。
 - **参数**:
   - `a`: 需要绝对值的长整数。
 - **返回**: `a` 的绝对值。
 
-<font color=blue>**`static double max(double a, double b)`**</font>  
+<span style="color: blue;">**`static double max(double a, double b)`**</span>  
 - **描述**: 返回两个双精度浮点数的最大值。
 - **参数**:
   - `a`: 第一个双精度浮点数。
   - `b`: 第二个双精度浮点数。
 - **返回**: `a` 和 `b` 中的较大值。
 
-<font color=blue>**`static float max(float a, float b)`**</font>  
+<span style="color: blue;">**`static float max(float a, float b)`**</span>  
 - **描述**: 返回两个单精度浮点数的最大值。
 - **参数**:
   - `a`: 第一个单精度浮点数。
   - `b`: 第二个单精度浮点数。
 - **返回**: `a` 和 `b` 中的较大值。
 
-<font color=blue>**`static int max(int a, int b)`**</font>  
+<span style="color: blue;">**`static int max(int a, int b)`**</span>  
 - **描述**: 返回两个整数的最大值。
 - **参数**:
   - `a`: 第一个整数。
   - `b`: 第二个整数。
 - **返回**: `a` 和 `b` 中的较大值。
 
-<font color=blue>**`static long max(long a, long b)`**</font>  
+<span style="color: blue;">**`static long max(long a, long b)`**</span>  
 - **描述**: 返回两个长整数的最大值。
 - **参数**:
   - `a`: 第一个长整数。
   - `b`: 第二个长整数。
 - **返回**: `a` 和 `b` 中的较大值。
 
-<font color=blue>**`static double min(double a, double b)`**</font>  
+<span style="color: blue;">**`static double min(double a, double b)`**</span>  
 - **描述**: 返回两个双精度浮点数的最小值。
 - **参数**:
   - `a`: 第一个双精度浮点数。
   - `b`: 第二个双精度浮点数。
 - **返回**: `a` 和 `b` 中的较小值。
 
-<font color=blue>**`static float min(float a, float b)`**</font>  
+<span style="color: blue;">**`static float min(float a, float b)`**</span>  
 - **描述**: 返回两个单精度浮点数的最小值。
 - **参数**:
   - `a`: 第一个单精度浮点数。
   - `b`: 第二个单精度浮点数。
 - **返回**: `a` 和 `b` 中的较小值。
 
-<font color=blue>**`static int min(int a, int b)`**</font>  
+<span style="color: blue;">**`static int min(int a, int b)`**</span>  
 - **描述**: 返回两个整数的最小值。
 - **参数**:
   - `a`: 第一个整数。
   - `b`: 第二个整数。
 - **返回**: `a` 和 `b` 中的较小值。
 
-<font color=blue>**`static long min(long a, long b)`**</font>  
+<span style="color: blue;">**`static long min(long a, long b)`**</span>  
 - **描述**: 返回两个长整数的最小值。
 - **参数**:
   - `a`: 第一个长整数。
   - `b`: 第二个长整数。
 - **返回**: `a` 和 `b` 中的较小值。
 
-<font color=blue>**`static double ceil(double a)`**</font>  
+<span style="color: blue;">**`static double ceil(double a)`**</span>  
 - **描述**: 返回大于或等于 `a` 的最小整数值。
 - **参数**:
   - `a`: 要向上取整的双精度浮点数。
 - **返回**: 向上取整后的整数。
 
-<font color=blue>**`static float ceil(float a)`**</font>  
+<span style="color: blue;">**`static float ceil(float a)`**</span>  
 - **描述**: 返回大于或等于 `a` 的最小整数值。
 - **参数**:
   - `a`: 要向上取整的单精度浮点数。
 - **返回**: 向上取整后的整数。
 
-<font color=blue>**`static double floor(double a)`**</font>  
+<span style="color: blue;">**`static double floor(double a)`**</span>  
 - **描述**: 返回小于或等于 `a` 的最大整数值。
 - **参数**:
   - `a`: 要向下取整的双精度浮点数。
 - **返回**: 向下取整后的整数。
 
-<font color=blue>**`static float floor(float a)`**</font>  
+<span style="color: blue;">**`static float floor(float a)`**</span>  
 - **描述**: 返回小于或等于 `a` 的最大整数值。
 - **参数**:
   - `a`: 要向下取整的单精度浮点数。
 - **返回**: 向下取整后的整数。
 
-<font color=blue>**`static double round(double a)`**</font>  
+<span style="color: blue;">**`static double round(double a)`**</span>  
 - **描述**: 对 `a` 进行四舍五入。
 - **参数**:
   - `a`: 要四舍五入的双精度浮点数。
 - **返回**: 四舍五入后的整数。
 
-<font color=blue>**`static float round(float a)`**</font>  
+<span style="color: blue;">**`static float round(float a)`**</span>  
 - **描述**: 对 `a` 进行四舍五入。
 - **参数**:
   - `a`: 要四舍五入的单精度浮点数。
 - **返回**: 四舍五入后的整数。
 
-<font color=blue>**`static double random()`**</font>  
+<span style="color: blue;">**`static double random()`**</span>  
 - **描述**: 返回一个介于 [0.0, 1.0) 的随机数。
 - **返回**: 随机生成的双精度浮点数。
 
-<font color=blue>**`static int gcd(int a, int b)`**</font>  
+<span style="color: blue;">**`static int gcd(int a, int b)`**</span>  
 - **描述**: 返回两个整数的最大公约数。
 - **参数**:
   - `a`: 第一个整数。
   - `b`: 第二个整数。
 - **返回**: 最大公约数。
 
-<font color=blue>**`static long gcd(long a, long b)`**</font>  
+<span style="color: blue;">**`static long gcd(long a, long b)`**</span>  
 - **描述**: 返回两个长整数的最大公约数。
 - **参数**:
   - `a`: 第一个长整数。
   - `b`: 第二个长整数。
 - **返回**: 最大公约数。
 
-<font color=blue>**`static int lcm(int a, int b)`**</font>  
+<span style="color: blue;">**`static int lcm(int a, int b)`**</span>  
 - **描述**: 返回两个整数的最小公倍数。
 - **参数**:
   - `a`: 第一个整数。
   - `b`: 第二个整数。
 - **返回**: 最小公倍数。
 
-<font color=blue>**`static long lcm(long a, long b)`**</font>  
+<span style="color: blue;">**`static long lcm(long a, long b)`**</span>  
 - **描述**: 返回两个长整数的最小公倍数。
 - **参数**:
   - `a`: 第一个长整数。
