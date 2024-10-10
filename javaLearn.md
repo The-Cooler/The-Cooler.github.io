@@ -180,4 +180,116 @@ do{
 | public    |     √     |     √     |       √        |         √         |   
 
 ### 特殊类   
-**1. String**
+**1. String**   
+```java
+public class lang{
+    public final class String{
+        //构造函数
+        public String();
+        public String(char[] value);
+        public String(byte[] value);
+        public String(byte[] value,int offset,int length);
+        public String(String original);
+
+        //返回指定索引处的字符
+        public char charAt(int index);
+
+        //返回字符串长度
+        public int length();
+
+        //判断字符串是否为空，length() == 0则返回true
+        public boolean isEmpty();
+
+        //判断字符串是否相等(比较的是字符串的值)，忽略大小写
+        public boolean equals(Object anObject);
+
+        //按字典序比较两个字符串，返回值：0，字符串相等；正数，this字符串大于anotherString；负数，this字符串小于anotherString
+        public int compareTo(String anotherString);
+
+        //将字符串连接起来，this字符串在前
+        public String concat(String str);
+
+        //定位子字符串的位置
+        public int indexOf(String str);
+
+        //返回从指定索引开始到结尾的子字符串
+        public String substring(int beginIndex);
+
+        //返回从指定索引开始到指定索引结束的子字符串
+        public String substring(int beginIndex,int endIndex);
+
+        //替换字符串中的字符
+        public String replace(char oldChar,char newChar);
+
+        //按照正则表达式分割字符串
+        public String[] split(String regex);
+
+        //将字符串转换为小写
+        public String toLowerCase();
+
+        //将字符串转换为大写
+        public String topperCase();
+
+        //去除字符串两端的空白符
+        public String trim();
+
+        //将字符串转换为字节数组
+        public void getBytes(int srcBegin,int srcEnd,byte[] dst,int dstBegin);
+
+        //将字节数组转换为字符串
+        public void getChars(int srcBegin,int srcEnd,char[] dst,int dstBegin);
+
+        //返回字符串的规范化版本
+        public String intern();
+    }
+}
+```   
+
+**注意**：String用==比较时，比较的是地址，而不是值。
+
+**2. Math**   
+```java
+public class lang{
+    public class Math{
+        //返回绝对值
+        public static double abs(double a);
+        public static float abs(float a);
+        public static int abs(int a);
+        public static long abs(long a);
+
+        //返回最大值
+        public static double max(double a,double b);
+        public static float max(float a,float b);
+        public static int max(int a,int b);
+        public static long max(long a,long b);
+
+        //返回最小值
+        public static double min(double a,double b);
+        public static float min(float a,float b);
+        public static int min(int a,int b);
+        public static long min(long a,long b);
+
+        //返回向上取整
+        public static double ceil(double a);
+        public static float ceil(float a);
+
+        //返回向下取整
+        public static double floor(double a);
+        public static float floor(float a);
+
+        //返回向上取整或向下取整
+        public static double round(double a);
+        public static float round(float a);
+
+        //返回随机数
+        public static double random();
+
+        //返回两个数的最大公约数
+        public static int gcd(int a,int b);
+        public static long gcd(long a,long b);
+
+        //返回两个数的最小公倍数
+        public static int lcm(int a,int b);
+        public static long lcm(long a,long b);
+    }
+}
