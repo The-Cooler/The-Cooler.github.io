@@ -24,8 +24,10 @@ body.night-mode {
 </style>  
 
 <style>   
+
 body night-mode table th{
-    background-color: #282c34 !important; /* 设置黑夜模式字体颜色 */
+    background-color: #282c34 !important; 
+    color: #000000
 }
 
 body.night-mode table td {
