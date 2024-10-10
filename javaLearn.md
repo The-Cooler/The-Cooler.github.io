@@ -7,14 +7,20 @@ body.night-mode {
     background-color: #282c34; /* 设置黑夜模式背景色 */
     color: #ffffff; /* 设置黑夜模式字体颜色 */
     transition: background-color 0.5s ease; /* 设置黑夜模式切换动画 */
-    /*设置黑夜模式代码块样式*/
-    code {
-        background-color: #282c34; /* 设置黑夜模式代码块背景色 */
-        color: #ffffff !important; /* 设置黑夜模式代码块字体颜色 */
-        transition: background-color 0.5s ease; /* 设置黑夜模式代码块切换动画 */
-    }
+    pre {
+    background-color: #282c34 !important; /* 设置黑夜模式背景色 */
+    color: #ffffff !important; /* 设置黑夜模式字体颜色 */
+    padding: 10px; /* 添加内边距，提高可读性 */
+    border-radius: 5px; /* 可选：设置圆角效果 */
+    overflow-x: auto; /* 允许水平滚动 */
 }
-</style>
+
+code {
+    background-color: inherit; /* 继承父元素背景色 */
+    color: inherit; /* 继承父元素字体颜色 */
+}
+}
+</style>  
 
 <script>
 function toggleNightMode() {
