@@ -139,7 +139,7 @@ do{
 
 ### 一些概念   
 
-![alt text](image.png)
+![alt text](成员.png)
 
     
 **this**     
