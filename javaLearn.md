@@ -13,11 +13,19 @@ body.night-mode {
     padding: 10px; /* 添加内边距，提高可读性 */
     border-radius: 5px; /* 可选：设置圆角效果 */
     overflow-x: auto; /* 允许水平滚动 */
+    } 
+    /*更改高亮颜色*/
+    pre.highlight {
+        background-color: #000000 !important; /* 设置黑夜模式背景色 */
+        color: #ffffff !important; /* 设置黑夜模式字体颜色 */
     }
     code {
         background-color: inherit; /* 继承父元素背景色 */
         color: inherit; /* 继承父元素字体颜色 */
+        padding: 0; /* 去除内边距 */
+        border-radius: 0; /* 去除圆角 */
     }
+   
 }
 </style>  
 
