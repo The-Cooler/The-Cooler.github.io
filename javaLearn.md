@@ -1,5 +1,7 @@
 # Java学习
 
+<script type = "math/tex">
+
 <button onclick="toggleNightMode()">切换黑夜模式</button>
 
 <style>
@@ -137,16 +139,7 @@ do{
 
 ### 一些概念   
 
-$$   
-
-变量 
-\begin{cases} 
-    成员变量：函数外\\
-    局部变量：函数内\\
-    类变量：使用static声明的变量
-\end{cases}   
-
-$$
+![alt text](image.png)
 
     
 **this**     
