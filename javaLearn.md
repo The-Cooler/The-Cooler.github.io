@@ -10,7 +10,7 @@ body.night-mode {
     /*设置黑夜模式代码块样式*/
     code {
         background-color: #282c34; /* 设置黑夜模式代码块背景色 */
-        color: #ffffff; /* 设置黑夜模式代码块字体颜色 */
+        color: #ffffff !important; /* 设置黑夜模式代码块字体颜色 */
         transition: background-color 0.5s ease; /* 设置黑夜模式代码块切换动画 */
     }
 }
