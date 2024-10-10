@@ -7,7 +7,12 @@ body.night-mode {
     background-color: #282c34; /* 设置黑夜模式背景色 */
     color: #ffffff; /* 设置黑夜模式字体颜色 */
     transition: background-color 0.5s ease; /* 设置黑夜模式切换动画 */
-
+    /*设置黑夜模式代码块样式*/
+    code {
+        background-color: #282c34; /* 设置黑夜模式代码块背景色 */
+        color: #ffffff; /* 设置黑夜模式代码块字体颜色 */
+        transition: background-color 0.5s ease; /* 设置黑夜模式代码块切换动画 */
+    }
 }
 </style>
 
@@ -45,7 +50,8 @@ function toggleNightMode() {
 > % 取余:C++中的%，两数必须是整型，Java中不做限制。  
 
 ### 控制语句
-1. if 条件语句
+1. if 条件语句  
+
 ```java
 if(条件表达式){
     //执行语句
@@ -95,6 +101,7 @@ while(条件表达式){
 ```   
 
 5. do-while 循环语句  
+
 ```java
 do{
     //执行语句
