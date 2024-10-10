@@ -1,7 +1,5 @@
 # Java学习
 
-<script type = "math/tex">
-
 <button onclick="toggleNightMode()">切换黑夜模式</button>
 
 <style>
