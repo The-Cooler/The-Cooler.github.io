@@ -7,7 +7,7 @@ body.night-mode {
     background-color: #282c34; /* 设置黑夜模式背景色 */
     color: #ffffff; /* 设置黑夜模式字体颜色 */
     transition: background-color 0.5s ease; /* 设置黑夜模式切换动画 */
-    
+
 }
 </style>
 
@@ -59,7 +59,7 @@ else{
 ```
 2. switch 多分支语句  
 
-````java
+```java
 switch(变量){
     case 值1:
         //执行语句
@@ -71,7 +71,7 @@ switch(变量){
         //执行语句
         break;
 }
-````
+```
 3. for 循环语句  
 
 ```java
