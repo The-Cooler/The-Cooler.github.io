@@ -265,5 +265,5 @@ void create_circle(List** head) {
 
 ### 双向链表
 ***<u>就是把每个结点都有两个指针，一个指向前驱结点，一个指向后继结点</u>***    
-![alt text](双向链表.png)
+![alt text)
 
