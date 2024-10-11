@@ -5,9 +5,23 @@
 <style>
 body.night-mode {
     background-color: #282c34; /* 设置黑夜模式背景色 */
-    color: #fff; /* 设置黑夜模式字体颜色 */
+    color: #ffffff; /* 设置黑夜模式字体颜色 */
+    transition: background-color 0.5s ease; /* 设置黑夜模式切换动画 */
+    pre {
+    background-color: #000000 !important; /* 设置黑夜模式背景色 */
+    color: #ffffff !important; /* 设置黑夜模式字体颜色 */
+    padding: 10px; /* 添加内边距，提高可读性 */
+    border-radius: 5px; /* 可选：设置圆角效果 */
+    overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        background-color: inherit; /* 继承父元素背景色 */
+        color: inherit; /* 继承父元素字体颜色 */
+        padding: 0; /* 去除内边距 */
+        border-radius: 0; /* 去除圆角 */
+    }
 }
-</style>
+</style>  
 
 <script>
 function toggleNightMode() {
@@ -21,11 +35,10 @@ function toggleNightMode() {
 * [链表](#链表)
 
 ## 链表
-  * [1.创建链表](#1创建链表)
-  * [2.表的遍历](#2表的遍历)
-  * [3.删除](#3删除)
-  * [4.插入](#4插入)
-  * [易错提醒](#易错提醒)
+
+[1.单链表](#单链表)
+[2.循环链表](#循环链表)
+[3.双向链表](#双向链表)   
 
 ***
 
@@ -34,7 +47,16 @@ function toggleNightMode() {
 
 ***
 
+### 单链表   
 
+[1.创建链表](#1创建链表)
+[2.表的遍历](#2表的遍历)
+[3.删除](#3删除)
+[4.插入](#4插入)
+[5.修改](#5反转链表)
+[6.完整代码与演示](#完整代码与演示)
+
+![alt text](单链表.png)
 
 #### 1.创建链表
 ```c
@@ -102,6 +124,26 @@ void finally_insert(List** head, int data) {//尾插法
     new_node->data = data;
 }
 ```   
+     
+#### 5.反转链表   
+```c
+//无头节点的链表反转
+List* reverse(List* head) {
+    List* p = head;
+    if (p == NULL || p->next == NULL) return head;
+
+    List* ptr = reverse(p->next);
+    p->next->next = p;
+    p->next = NULL;
+    return ptr;
+}
+
+//有头节点的链表反转
+List* head_reverse(List* p) {
+    p->next = reverse(p->next);
+    return p;
+}
+```
 
 **<u><font color = red>易错提醒:</font></u>**   
 
@@ -206,3 +248,15 @@ int main() {
 ```
 
 ### 进阶：循环链表
+<u>***就是把尾结点的next指针指向头结点，这样就成了环形链表***</u>
+
+```c
+void create_circle(List** head) {
+    List* p = *head;
+    while (p->next != NULL) p = p->next;
+    p->next = *head;
+}
+```
+
+### 双向链表
+<u>***就是把每个结点都有两个指针，一个指向前驱结点，一个指向后继结点***</u>   
