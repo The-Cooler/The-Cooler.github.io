@@ -189,8 +189,9 @@ do{
 
 ### 特殊类   
 
-[1.string](#1-string)   
-[2.math](#2-math)
+[1.string](#1-string) 
+[2.stringbuffer](#2-stringbuffer)  
+[3.math](#3-math)
 
 
 #### **1. String**
@@ -319,6 +320,215 @@ do{
 - **返回**: 规范化字符串。
 
 ##### **注意**: String用==比较时，比较的是地址，而不是值。
+
+#### **2. StringBuffer**
+
+##### **构造方法**
+
+<span style="color: blue;">**`StringBuffer()`**</span>  
+- **描述**: 创建一个新的空字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer(int capacity)`**</span>  
+- **描述**: 创建一个新的字符串缓冲区，其初始容量为 `capacity`。
+- **参数**:
+  - `capacity`: 初始容量。
+
+##### **方法**
+
+<span style="color: blue;">**`StringBuffer append(boolean b)`**</span>  
+- **描述**: 将布尔值转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `b`: 要追加的布尔值。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(char c)`**</span>  
+- **描述**: 将字符追加到缓冲区末尾。
+- **参数**:
+  - `c`: 要追加的字符。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(char[] str)`**</span>  
+- **描述**: 将字符数组追加到缓冲区末尾。
+- **参数**:
+  - `str`: 要追加的字符数组。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(char[] str, int offset, int len)`**</span>  
+- **描述**: 将字符数组的指定部分追加到缓冲区末尾。
+- **参数**:
+  - `str`: 要追加的字符数组。
+  - `offset`: 起始索引。
+  - `len`: 要追加的字符数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(double d)`**</span>  
+- **描述**: 将双精度浮点数转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `d`: 要追加的双精度浮点数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(float f)`**</span>  
+- **描述**: 将单精度浮点数转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `f`: 要追加的单精度浮点数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(int i)`**</span>  
+- **描述**: 将整数转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `i`: 要追加的整数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(long lng)`**</span>  
+- **描述**: 将长整数转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `lng`: 要追加的长整数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(Object obj)`**</span>  
+- **描述**: 将对象转换为字符串并追加到缓冲区末尾。
+- **参数**:
+  - `obj`: 要追加的对象。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(String str)`**</span>  
+- **描述**: 将字符串追加到缓冲区末尾。
+- **参数**:
+  - `str`: 要追加的字符串。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer append(StringBuffer sb)`**</span>  
+- **描述**: 将字符串缓冲区追加到缓冲区末尾。
+- **参数**:
+  - `sb`: 要追加的字符串缓冲区。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`int capacity()`**</span>  
+- **描述**: 返回当前容量。
+- **返回**: 当前容量。
+
+<span style="color: blue;">**`char charAt(int index)`**</span>  
+- **描述**: 返回指定索引处的字符。
+- **参数**:
+  - `index`: 字符索引。
+- **返回**: 字符。
+
+<span style="color: blue;">**`int length()`**</span>  
+- **描述**: 返回字符串缓冲区长度。
+- **返回**: 字符串缓冲区长度。
+
+<span style="color: blue;">**`StringBuffer delete(int start, int end)`**</span>  
+- **描述**: 删除指定索引范围的字符。
+- **参数**:
+  - `start`: 起始索引。
+  - `end`: 结束索引。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer deleteCharAt(int index)`**</span>  
+- **描述**: 删除指定索引处的字符。
+- **参数**:
+  - `index`: 字符索引。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, boolean b)`**</span>  
+- **描述**: 在指定索引处插入布尔值。
+- **参数**:
+  - `index`: 起始索引。
+  - `b`: 要插入的布尔值。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, char c)`**</span>  
+- **描述**: 在指定索引处插入字符。
+- **参数**:
+  - `index`: 起始索引。
+  - `c`: 要插入的字符。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, char[] str)`**</span>  
+- **描述**: 在指定索引处插入字符数组。
+- **参数**:
+  - `index`: 起始索引。
+  - `str`: 要插入的字符数组。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, char[] str, int offset, int len)`**</span>  
+- **描述**: 在指定索引处插入字符数组的指定部分。
+- **参数**:
+  - `index`: 起始索引。
+  - `str`: 要插入的字符数组。
+  - `offset`: 字符数组起始索引。
+  - `len`: 要插入的字符数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, double d)`**</span>  
+- **描述**: 在指定索引处插入双精度浮点数。
+- **参数**:
+  - `index`: 起始索引。
+  - `d`: 要插入的双精度浮点数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, float f)`**</span>  
+- **描述**: 在指定索引处插入单精度浮点数。
+- **参数**:
+  - `index`: 起始索引。
+  - `f`: 要插入的单精度浮点数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, int i)`**</span>  
+- **描述**: 在指定索引处插入整数。
+- **参数**:
+  - `index`: 起始索引。
+  - `i`: 要插入的整数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, long l)`**</span>  
+- **描述**: 在指定索引处插入长整数。
+- **参数**:
+  - `index`: 起始索引。
+  - `l`: 要插入的长整数。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, Object obj)`**</span>  
+- **描述**: 在指定索引处插入对象。
+- **参数**:
+  - `index`: 起始索引。
+  - `obj`: 要插入的对象。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer insert(int index, String str)`**</span>  
+- **描述**: 在指定索引处插入字符串。
+- **参数**:
+  - `index`: 起始索引。
+  - `str`: 要插入的字符串。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`StringBuffer reverse()`**</span>  
+- **描述**: 反转字符串缓冲区。
+- **返回**: 字符串缓冲区。
+
+<span style="color: blue;">**`String toString()`**</span>  
+- **描述**: 返回字符串缓冲区的字符串表示。
+- **返回**: 字符串。
+
+<span style="color: blue;">**`StringBuffer setLength(int newLength)`**</span>  
+- **描述**: 设置字符串缓冲区的长度。
+- **参数**:
+  - `newLength`: 新的长度。
+- **返回**: 字符串缓冲区。
+
+##### ***String和StringBuffer的区别***
+
+- String是不可变的对象，每次修改都会产生一个新的对象，因此String的操作效率较低。
+- StringBuffer是可变的对象，可以对字符串进行修改，因此StringBuffer的操作效率较高。
+- 在单线程环境下，使用String比StringBuffer更快，因为String的操作是线程安全的。
+- 在多线程环境下，使用StringBuffer比String更安全，因为StringBuffer的操作不是线程安全的。
+
+##### ***StringBuffers和StringBuilders的区别***
+
+- StringBuffers是同步的，而StringBuilders是非同步的。
+- StringBuffers是可变的，而StringBuilders是不可变的。
+- StringBuffers是线程安全的，而StringBuilders不是线程安全的。
+- StringBuffers的效率比StringBuilders高。
 
 #### **2. Math**
 
@@ -471,3 +681,4 @@ do{
   - `a`: 第一个长整数。
   - `b`: 第二个长整数。
 - **返回**: 最小公倍数。
+
