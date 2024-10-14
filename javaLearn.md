@@ -150,7 +150,8 @@ do{
 * [1.不知道怎么分类的知识点](#不知道怎么分类的知识点)
 * [2.一些概念](#一些概念)
 * [3.封装](#封装)
-* [4.特殊类](#特殊类)
+* [4.继承](#继承)
+* [5.特殊类](#特殊类)
 
 
 ### 不知道怎么分类的知识点
@@ -187,9 +188,26 @@ do{
 | protected |     √     |     √     |       √        |        ✕         |
 | public    |     √     |     √     |       √        |         √         |   
 
+### 继承   
+
+**继承**: 一个类可以从另一个类继承其<font color="red">属性和方法</font>，并可以对其扩展。
+> 1. 单继承：一个子类只能有一个父类。
+> 2. 多继承：一个子类可以有多个父类。
+> 3. 接口继承：一个子类可以实现多个接口。
+
+***形式***
+```java
+class 子类 extends 父类{
+    //属性
+    //方法
+}
+```
+
+
+
 ### 特殊类   
 
-[1.string](#1-string) 
+[1.string](#1-string)    
 [2.stringbuffer](#2-stringbuffer)  
 [3.math](#3-math)
 
@@ -520,8 +538,7 @@ do{
 
 - String是不可变的对象，每次修改都会产生一个新的对象，因此String的操作效率较低。
 - StringBuffer是可变的对象，可以对字符串进行修改，因此StringBuffer的操作效率较高。
-- 在单线程环境下，使用String比StringBuffer更快，因为String的操作是线程安全的。
-- 在多线程环境下，使用StringBuffer比String更安全，因为StringBuffer的操作不是线程安全的。
+- 在多线程环境下，使用StringBuffer比String更安全，因为StringBuffer的操作是线程安全的。
 
 ##### ***StringBuffers和StringBuilders的区别***
 
@@ -682,3 +699,77 @@ do{
   - `b`: 第二个长整数。
 - **返回**: 最小公倍数。
 
+#### **3. Calendar**
+
+***Calendar类***
+
+- 用于处理日期、时间、时区和时刻。
+- 该类提供了对日期、时间、时区和时刻的各种操作。
+- Calendar类是抽象类，不能直接实例化，只能通过它的子类来实例化。
+
+***Calendar类中的常量***
+
+- `Calendar.YEAR`： 年。
+- `Calendar.MONTH`： 月。
+- `Calendar.DATE`： 日。
+- `Calendar.HOUR`： 时。
+- `Calendar.MINUTE`： 分。
+- `Calendar.SECOND`： 秒。
+- `Calendar.AM_PM`： 上午/下午。
+- `Calendar.HOUR_OF_DAY`： 24小时制的小时。
+
+
+##### **方法**
+
+<span style="color: blue;">**`Calendar getInstance()`**</span>  
+- **描述**: 获取当前时间的日历对象。
+- **返回**: 当前时间的日历对象。
+
+<span style="color: blue;">**`void setTime(Date date)`**</span>  
+- **描述**: 设置日历的时间。
+- **参数**:
+  - `date`: 要设置的时间。
+
+<span style="color: blue;">**`Date getTime()`**</span>  
+- **描述**: 获取日历的时间。
+- **返回**: 日历的时间。
+
+#### **4. Date**
+
+- 用于处理日期和时间。
+- 该类表示特定的日期和时间，精确到毫秒。
+- Date类是java.util包中的一个类，是Calendar类的子类。
+
+##### **方法**
+
+<span style="color: blue;">**`Date()`**</span>  
+- **描述**: 创建一个新的 Date 对象。
+
+<span style="color: blue;">**`Date(long date)`**</span>  
+- **描述**: 创建一个新的 Date 对象，并将其初始化为指定的时间。
+- **参数**:
+  - `date`: 要设置的时间。
+
+### **5. SimpleDateFormat**
+
+- 用于格式化日期和时间。
+- 该类用于格式化日期和时间，它可以将一个Date对象转换为一个字符串，或者将一个字符串转换为一个Date对象。
+
+##### **方法**
+
+<span style="color: blue;">**`SimpleDateFormat(String pattern)`**</span>  
+- **描述**: 创建一个新的 SimpleDateFormat 对象。
+- **参数**:
+  - `pattern`: 日期和时间模式。
+
+<span style="color: blue;">**`String format(Date date)`**</span>  
+- **描述**: 将一个 Date 对象格式化为字符串。
+- **参数**:
+  - `date`: 要格式化的时间。
+- **返回**: 格式化后的字符串。
+
+<span style="color: blue;">**`Date parse(String source)`**</span>  
+- **描述**: 将一个字符串解析为 Date 对象。
+- **参数**:
+  - `source`: 要解析的字符串。
+- **返回**: 解析后的 Date 对象。
