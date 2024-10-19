@@ -17,7 +17,7 @@ Stack* createStack(int size) {
 
 void push(Stack* stack, int data) {
     if (stack->top == stack->size) {
-        printf("Õ»Âú\n");
+        printf("æ ˆæ»¡\n");
         return;
     }
     stack->arr[stack->top] = data;
@@ -26,7 +26,7 @@ void push(Stack* stack, int data) {
 
 int pop(Stack* stack) {
     if (stack->top == 0) {
-        printf("Õ»¿Õ\n");
+        printf("æ ˆç©º\n");
         return -1;
     }
     stack->top--;
@@ -35,7 +35,7 @@ int pop(Stack* stack) {
 
 int peek(Stack* stack) {
     if (stack->top == 0) {
-        printf("Õ»¿Õ\n");
+        printf("æ ˆç©º\n");
         return -1;
     }
     return stack->arr[stack->top - 1];
@@ -52,10 +52,10 @@ int main() {
     push(stack, 3);
     push(stack, 4);
     push(stack, 5);
-    printf("Õ»¶¥ÔªËØ:%d\n", peek(stack));
-    printf("Õ»ÊÇ·ñÎª¿Õ:%d\n", isEmpty(stack));
-    printf("µ¯³öÔªËØ:%d\n", pop(stack));
-    printf("Õ»¶¥ÔªËØ:%d\n", peek(stack));
-    printf("Õ»ÊÇ·ñÎª¿Õ:%d\n", isEmpty(stack));
+    printf("æ ˆé¡¶å…ƒç´ :%d\n", peek(stack));
+    printf("æ ˆæ˜¯å¦ä¸ºç©º:%d\n", isEmpty(stack));
+    printf("å¼¹å‡ºå…ƒç´ :%d\n", pop(stack));
+    printf("æ ˆé¡¶å…ƒç´ :%d\n", peek(stack));
+    printf("æ ˆæ˜¯å¦ä¸ºç©º:%d\n", isEmpty(stack));
     return 0;
 }
