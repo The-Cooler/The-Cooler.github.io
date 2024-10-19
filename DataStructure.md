@@ -273,3 +273,318 @@ void create_circle(List** head) {
 ***<u>就是把每个结点都有两个指针，一个指向前驱结点，一个指向后继结点</u>***    
 ![alt text](双向链表.png)
 
+## 栈与队列
+
+[1.栈](#栈)   
+[2.队列](#队列)   
+
+### 栈
+
+**栈是一种线性表结构，只允许在表尾进行插入和删除操作，也就是说，栈顶元素只能是最先进入的元素，而栈底元素只能是最后一个进入的元素。栈的操作有两种基本操作，即压栈和弹栈。**   
+
+[1.创建栈](#1创建栈)   
+[2.压栈](#2压栈)   
+[3.弹栈](#3弹栈)   
+[4.查看栈顶元素](#4查看栈顶元素)   
+[5.判断栈是否为空](#5判断栈是否为空)   
+[6.完整代码与演示](#完整代码与演示)   
+
+#### 1.创建栈
+```c
+//这里为了演示方便是用数组创建，实际上用链表也能实现
+struct Stack {
+    int top;
+    int size;
+    int* arr;
+};
+
+//创建栈
+Stack* createStack(int size) {
+    Stack* stack = (Stack*)malloc(sizeof(Stack));
+    stack->top = 0;//栈顶指针
+    stack->size = size;//栈大小
+    stack->arr = (int*)malloc(size * sizeof(int));//申请空间
+    return stack;
+}
+```
+
+#### 2.压栈
+```c
+void push(Stack* stack, int data) {
+    if (stack->top == stack->size) {
+        printf("栈满\n");
+        return;
+    }
+    stack->arr[stack->top] = data;//入栈
+    stack->top++;//栈顶指针加1
+}
+```
+
+#### 3.弹栈
+```c
+int pop(Stack* stack) {
+    if (stack->top == 0) {
+        printf("栈空\n");
+        return -1;
+    }
+    stack->top--;//栈顶指针减1
+    return stack->arr[stack->top];//出栈
+}
+```
+
+#### 4.查看栈顶元素
+```c
+int peek(Stack* stack) {
+    if (stack->top == 0) {
+        printf("栈空\n");
+        return -1;
+    }
+    return stack->arr[stack->top - 1];//栈顶元素
+}
+```
+
+#### 5.判断栈是否为空
+```c
+int isEmpty(Stack* stack) {
+    return stack->top == 0;
+}
+```
+***对于两个相对的栈操作，当abs(top1-top2) <= 1时，它们未溢出***
+   
+
+#### 完整代码与演示
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Stack {
+    int top;
+    int size;
+    int* arr;
+}Stack;
+
+Stack* createStack(int size) {
+    Stack* stack = (Stack*)malloc(sizeof(Stack));
+    stack->top = 0;
+    stack->size = size;
+    stack->arr = (int*)malloc(size * sizeof(int));
+    return stack;
+}
+
+void push(Stack* stack, int data) {
+    if (stack->top == stack->size) {
+        printf("栈满\n");
+        return;
+    }
+    stack->arr[stack->top] = data;
+    stack->top++;
+}
+
+int pop(Stack* stack) {
+    if (stack->top == 0) {
+        printf("栈空\n");
+        return -1;
+    }
+    stack->top--;
+    return stack->arr[stack->top];
+}
+
+int peek(Stack* stack) {
+    if (stack->top == 0) {
+        printf("栈空\n");
+        return -1;
+    }
+    return stack->arr[stack->top - 1];
+}
+
+int isEmpty(Stack* stack) {
+    return stack->top == 0;
+}
+
+int main() {
+    Stack* stack = createStack(5);
+    push(stack, 1);
+    push(stack, 2);
+    push(stack, 3);
+    push(stack, 4);
+    push(stack, 5);
+    printf("栈顶元素:%d\n", peek(stack));
+    printf("栈是否为空:%d\n", isEmpty(stack));
+    printf("弹出元素:%d\n", pop(stack));
+    printf("栈顶元素:%d\n", peek(stack));
+    printf("栈是否为空:%d\n", isEmpty(stack));
+    return 0;
+}
+
+/*
+栈顶元素:5
+栈是否为空:0
+弹出元素:5
+栈顶元素:4
+栈是否为空:0
+*/
+```   
+
+### 队列
+
+**队列是一种线性表结构，只允许在表头进行插入操作，在表尾进行删除操作，也就是说，队列的头部元素只能是最先进入的元素，而队列的尾部元素只能是最后一个进入的元素。队列的操作有两种基本操作，即入队和出队。以下是环形队列的实现方法。**   
+
+[1.创建队列](#1创建队列)   
+[2.入队](#2入队)   
+[3.出队](#3出队)   
+[4.查看队首元素](#4查看队首元素)   
+[5.判断队列是否为空](#5判断队列是否为空)   
+[6.完整代码与演示](#完整代码与演示)   
+
+
+
+#### 1.创建队列
+```c
+typedef struct Queue {
+    int front;
+    int rear;
+    int size;
+    int* arr;
+}Queue;
+
+void createQueue(Queue* queue, int size) {
+    queue->front = 0;
+    queue->rear = 0;
+    queue->size = size;
+    //把0作为哨兵，防止队列为空时出队时出错
+    queue->arr = (int*)malloc(size * sizeof(int) + 1);
+}
+
+```
+
+
+#### 2.入队
+```c
+void push(Queue* queue, int data) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    queue->arr[queue->rear] = data;//尾指针的前一个位置入队
+    queue->rear = (queue->rear + 1) % queue->size;//队列尾指针加1
+}
+```
+
+#### 3.出队
+```c
+int pop(Queue* queue) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    int data = queue->arr[queue->front];//队首元素出队
+    queue->front = (queue->front + 1) % queue->size;//队列头指针加1
+    return data;
+}
+```
+
+#### 4.查看队首元素
+```c
+int top(Queue* queue) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    return queue->arr[queue->front];
+}
+
+```
+
+#### 5.判断队列是否为空
+```c
+int isEmpty(Queue* queue) {
+    return queue->front == queue->rear;
+}
+
+```
+
+#### 完整代码与演示
+```c
+#include <stdio.h>
+#include <stdlib.h>
+
+typedef struct Queue {
+    int front;
+    int rear;
+    int size;
+    int* arr;
+}Queue;
+
+void createQueue(Queue* queue, int size) {
+    queue->front = 0;
+    queue->rear = 0;
+    queue->size = size;
+    //把0作为哨兵，防止队列为空时出队时出错
+    queue->arr = (int*)malloc(size * sizeof(int) + 1);
+}
+
+int isEmpty(Queue* queue) {
+    return queue->front != queue->rear;
+}
+
+void push(Queue* queue, int data) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    queue->arr[queue->rear] = data;//尾指针的前一个位置入队
+    queue->rear = (queue->rear + 1) % queue->size;//队列尾指针加1
+}
+
+int pop(Queue* queue) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    int data = queue->arr[queue->front];//队首元素出队
+    queue->front = (queue->front + 1) % queue->size;//队列头指针加1
+    return data;
+}
+
+int top(Queue* queue) {
+    if (abs(queue->front - queue->rear) == queue->size) {
+        printf("队列满\n");
+        return -1;
+    }
+
+    return queue->arr[queue->front];
+}
+
+int main() {
+    Queue* queue = (Queue*)malloc(sizeof(Queue));
+    createQueue(queue, 5);
+    push(queue, 1);
+    push(queue, 2);
+    push(queue, 3);
+    push(queue, 4);
+    push(queue, 5);
+    printf("队首元素:%d\n", top(queue));
+    printf("队列是否为空:%d\n", isEmpty(queue));
+    printf("出队元素:%d\n", pop(queue));
+    printf("队首元素:%d\n", top(queue));
+    printf("队列是否为空:%d\n", isEmpty(queue));
+    return 0;
+}
+
+/*
+队首元素:1
+队列是否为空:0
+出队元素:1
+队首元素:2
+队列是否为空:0
+*/
+```
+更多内容请点击[这里](https://github.com/liuyang1/data-structure/blob/master/README.md)
+
+
+## 串
