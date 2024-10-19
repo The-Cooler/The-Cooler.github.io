@@ -19,7 +19,7 @@ void push(Node** head, int data) {
 
 int pop(Node** head) {
     if (top == 0) return -1;
-    printf("%d��ջ\n", (*head)->next->data);
+    printf("%d³öÕ»\n", (*head)->next->data);
     Node* temp = (*head)->next;
     (*head)->next = (*head)->next->next;
     free(temp);
@@ -48,7 +48,7 @@ int main() {
     display(head);
     pop(&head);
     pop(&head);
-    puts("��ջ��");
+    puts("³öÕ»ºó£º");
     display(head);
     return 0;
 }
