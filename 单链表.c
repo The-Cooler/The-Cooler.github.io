@@ -14,7 +14,7 @@ void insert(List* head, int data) {
     head->next = newNode;
 }
 
-void delete_(List* head, int pos) {
+void delete(List* head, int pos) {
     List* temp = head;
     List* prev = head;
     while (temp != NULL && pos > 0) {
@@ -23,7 +23,7 @@ void delete_(List* head, int pos) {
         pos--;
     }
     if (temp == NULL) {
-        printf("³¬³öÁ´±í·¶Î§\n");
+        printf("è¶…å‡ºé“¾è¡¨èŒƒå›´\n");
         return;
     }
     prev->next = temp->next;
@@ -35,23 +35,23 @@ void find(List* head, int data) {
     int pos = 1;
     while (temp != NULL) {
         if (temp->data == data) {
-            printf("ÕÒµ½ÔªËØ%d£¬Î»ÖÃÎª%d\n", data, pos);
+            printf("æ‰¾åˆ°å…ƒç´ %dï¼Œä½ç½®ä¸º%d\n", data, pos);
             return;
         }
         temp = temp->next;
         pos++;
     }
-    printf("Î´ÕÒµ½ÔªËØ%d\n", data);
+    printf("æœªæ‰¾åˆ°å…ƒç´ %d\n", data);
 }
 
 int main() {
     List* head = (List*)malloc(sizeof(List));
     head->next = NULL;
-    //²åÈë
+    //æ’å…¥
     insert(head, 1);
-    //É¾³ı  
-    delete_(head, 1);
-    //²éÕÒ
+    //åˆ é™¤  
+    delete(head, 1);
+    //æŸ¥æ‰¾
     find(head, 1);
     return 0;
 }
