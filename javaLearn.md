@@ -312,15 +312,17 @@ class 子类 extends 抽象类{
 特点：   
 > 1.接口的所有方法都是抽象方法，不能有实现。
 > 2.接口不能创建对象，只能被实现。
-> 3.接口不能包含构造方法。
-> 4.接口的变量默认是final和static的。
+> 3.接口的变量默认是final和static的。   
+
 ```java
 访问权限 interface 接口名{
   //常量
+  类型名 常量名 = 值;//等价于public static final 类型名 常量名 = 值;
   //抽象方法
+  返回值类型 方法名(参数列表);
 }
 
-class 实现类 implements 接口名{
+class 实现类 implements 接口名1, 接口名2, ...{
   //方法体
 }
 ```
