@@ -1,3 +1,52 @@
+<button onclick="toggleNightMode()">切换黑夜模式</button>
+
+<style>
+body.night-mode {
+    background-color: #282c34; /* 设置黑夜模式背景色 */
+    color: #ffffff; /* 设置黑夜模式字体颜色 */
+    transition: background-color 0.5s ease; /* 设置黑夜模式切换动画 */
+    pre {
+    background-color: #000000 !important; /* 设置黑夜模式背景色 */
+    color: #ffffff !important; /* 设置黑夜模式字体颜色 */
+    padding: 10px; /* 添加内边距，提高可读性 */
+    border-radius: 5px; /* 可选：设置圆角效果 */
+    overflow-x: auto; /* 允许水平滚动 */
+    }
+    code {
+        background-color: inherit; /* 继承父元素背景色 */
+        color: inherit; /* 继承父元素字体颜色 */
+        padding: 0; /* 去除内边距 */
+        border-radius: 0; /* 去除圆角 */
+    }
+}
+</style>  
+
+<style>   
+body night-mode table th{
+    background-color: #282c34 !important; 
+    color: #000000
+}
+
+body.night-mode table td {
+    background-color: #282c34 !important; 
+}
+
+</style>
+
+<script>
+function toggleNightMode() {
+  var body = document.body;
+  body.classList.toggle("night-mode");
+}
+</script>   
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+<script>
+  hljs.highlightAll();
+</script>
+
+
 # 一. 概述
 
 通常情况下，java语言一般是用来开发后台程序的，所谓的后台程序就是部署在服务器端的程序，默默的工作，用户是看不到任何界面的，所以很多情况下，学习java会感觉很枯燥。
