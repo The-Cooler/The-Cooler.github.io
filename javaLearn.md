@@ -49,8 +49,9 @@ function toggleNightMode() {
 </script>
 
 ## 目录
-* [一.基础语法](#基础语法)
-* [二.面向对象](#面向对象)
+* [一.基础语法](#基础语法)   
+* [二.面向对象](#面向对象)   
+* [三.异常](#异常)
 
 
 ## 基础语法
@@ -933,3 +934,76 @@ class 实现类 implements 接口名1, 接口名2, ...{
 - **参数**:
   - `source`: 要解析的字符串。
 - **返回**: 解析后的 Date 对象。
+
+## 异常
+***定义：程序运行中，各种非正常情况***   
+
+*常见：除数为0，空指针，文件不存在，输入格式不正确等。*
+
+$$
+Object -> 
+Throwable -> 
+  \begin{cases}
+		Exception(运行时异常)->
+    \begin{cases}
+      ArithmeticException(算术异常) \\
+      NulPointerException(空指针异常) \\
+      IllegalArgumentException(非法参数异常) \\
+      ArrayIndexOutOfBoundsException(数组越界) \\
+    \end{cases} \\
+		Error (运行时错误) \\
+  \end{cases}
+$$   
+
+### **1. 异常处理**
+
+$$
+处理异常 
+  \begin{cases}
+    捕获异常:try-catch-finally \\
+    抛出异常:throw \\
+    声明异常:throws \\
+  \end{cases}
+$$
+
+#### **1.1 try-catch-finally**
+
+- try块：可能出现异常的语句块。
+- catch块：捕获异常的语句块。
+- finally块：无论是否出现异常都要执行的语句块。
+
+```java
+try {
+  //可能出现异常的语句块
+} catch (ExceptionType e) {
+  //捕获异常的语句块
+  e.printStackTrace(); //打印异常信息
+}catch (ExceptionType1 e1) {
+  //捕获异常的语句块
+}
+finally {
+  //无论是否出现异常都要执行的语句块
+  //一定是出口语句，不能有return语句
+}
+```
+<span style="color: red;">**注意**：ExceptionType不能是ExceptionType1的父类，因为如此后面的catch块将不会执行。</span>
+
+
+#### **1.2 throw**
+
+- 抛出一个异常。
+
+```java
+throw new ExceptionType("异常信息");
+```
+
+#### **1.3 throws**
+
+- 抛出一个异常，并通知调用者。
+
+```java
+public void method() throws ExceptionType {
+  //可能出现异常的语句块
+}
+```
+
