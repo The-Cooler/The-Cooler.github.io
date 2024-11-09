@@ -36,6 +36,49 @@ function toggleNightMode() {
 }
 </script>   
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.sidebar {
+    width: 200px; /* 左侧导航栏的宽度 */
+    padding: 20px; /* 内边距 */
+    background-color: #f4f4f4; /* 背景色 */
+}
+
+.content {
+    flex: 1; /* 主内容区占据剩余空间 */
+    padding: 20px; /* 内边距 */
+}
+
+h1, h2 {
+    color: #333; /* 标题颜色 */
+}
+
+ul {
+    list-style-type: none; /* 去掉列表符号 */
+    padding: 0; /* 去掉内边距 */
+}
+
+ul li {
+    margin: 10px 0; /* 列表项的垂直间距 */
+}
+
+ul li a {
+    text-decoration: none; /* 去掉下划线 */
+    color: #0066cc; /* 链接颜色 */
+}
+
+ul li a:hover {
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+
 
 ## 目录
 * [链表](#链表)
