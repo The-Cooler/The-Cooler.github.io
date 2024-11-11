@@ -940,20 +940,45 @@ class 实现类 implements 接口名1, 接口名2, ...{
 
 *常见：除数为0，空指针，文件不存在，输入格式不正确等。*
 
-$$
-Object -> 
-Throwable -> 
-  \begin{cases}
-		Exception(运行时异常)->
-    \begin{cases}
-      ArithmeticException(算术异常) \\
-      NulPointerException(空指针异常) \\
-      IllegalArgumentException(非法参数异常) \\
-      ArrayIndexOutOfBoundsException(数组越界) \\
-    \end{cases} \\
-		Error (运行时错误) \\
-  \end{cases}
-$$   
+/* 基本对象 */
+.object {
+  font-weight: bold;
+}
+
+/* Throwable 异常基类 */
+.throwable {
+  margin-left: 20px;
+}
+
+/* Exception 类 */
+.exception {
+  margin-left: 20px;
+  font-style: italic;
+}
+
+/* 具体异常类型 */
+.arithmetic-exception {
+  color: red;
+}
+
+.null-pointer-exception {
+  color: orange;
+}
+
+.illegal-argument-exception {
+  color: blue;
+}
+
+.array-index-out-of-bounds-exception {
+  color: green;
+}
+
+/* Error 类 */
+.error {
+  margin-left: 20px;
+  font-weight: bold;
+}
+
 
 ### **1. 异常处理**
 
