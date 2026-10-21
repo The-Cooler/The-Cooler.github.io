@@ -1,38 +1,381 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh-CN" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>我的笔记</title>
-    <style>
-        body {
-            background-color: #282c34;
-            color: white; /* 设置字体颜色为白色以便在深色背景上可见 */
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh; /* 使内容居中对齐 */
-        }
-        .centered-links {
-            text-align: center;
-        }
-        .centered-links a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px; /* 使链接之间有点间距 */
-            font-size: 1.2em; /* 增加字体大小，便于阅读 */
-        }
-    </style>
+    <title>技术栈 · TECH STACK</title>
+    <meta name="description" content="Python 后端、大模型微调与 Agent 开发的技术栈，附公开 GitHub 项目。">
+    <meta name="theme-color" content="#F1F2F3">
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Crect width='16' height='16' fill='%23F1F2F3'/%3E%3Cpath d='M0 8h16M8 0v16' stroke='%231F6F9C' stroke-width='1'/%3E%3Crect x='3.5' y='3.5' width='9' height='9' fill='none' stroke='%23191B1E'/%3E%3C/svg%3E">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap" media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Noto+Sans+SC:wght@300;400;500;700&family=Space+Grotesk:wght@500;600;700&display=swap">
+    </noscript>
+    <script>
+        (function () {
+            try {
+                var t = localStorage.getItem('stack-theme');
+                if (t !== 'light' && t !== 'dark') {
+                    t = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+                }
+                document.documentElement.setAttribute('data-theme', t);
+            } catch (e) {
+                document.documentElement.setAttribute('data-theme', 'light');
+            }
+        })();
+    </script>
+    <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
-    <div class="centered-links">
-        <a href="https://the-cooler.github.io/DataStructure" target="_blank">数据结构与算法</a>
-        <a href="https://the-cooler.github.io/javaLearn" target="_blank">Java学习笔记</a>
-        <a href="https://the-cooler.github.io/java图形化界面编程" target="_back">java图形化界面编程</a>
-    </div>
+    <a class="skip" href="#stack">跳到技术栈</a>
+    <canvas id="grid" aria-hidden="true"></canvas>
+
+    <header class="top">
+        <div class="wrap top-inner">
+            <a class="brand" href="#top" aria-label="回到顶部">
+                <span class="mark" aria-hidden="true"></span>
+                <span>TECH STACK</span>
+                <span class="brand-tail">/ SPEC</span>
+            </a>
+            <nav class="nav" aria-label="主导航">
+                <a href="#stack">技术栈</a>
+                <a href="#projects">项目</a>
+                <a class="ext" href="https://github.com/The-Cooler" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a>
+            </nav>
+            <button id="theme-toggle" class="theme" type="button" aria-label="切换到深色主题" title="切换主题">
+                <svg class="i-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" aria-hidden="true">
+                    <circle cx="12" cy="12" r="4.2"></circle>
+                    <path d="M12 2.5v2.4M12 19.1v2.4M2.5 12h2.4M19.1 12h2.4M5.2 5.2l1.7 1.7M17.1 17.1l1.7 1.7M18.8 5.2l-1.7 1.7M6.9 17.1l-1.7 1.7"></path>
+                </svg>
+                <svg class="i-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M20.5 14.1A8.6 8.6 0 0 1 9.9 3.5 8.6 8.6 0 1 0 20.5 14.1Z"></path>
+                </svg>
+                <span class="theme-label" aria-hidden="true">LIGHT</span>
+            </button>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero wrap">
+            <div class="hero-main">
+                <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>Stack spec / 06 layers · 59 items</p>
+                <h1>
+                    <span class="hl-line"><span style="--d:.05s">从语料到上线，</span></span>
+                    <span class="hl-line"><span style="--d:.16s">一条链路，<em>六层栈</em>。</span></span>
+                </h1>
+                <p class="lede">数据采集、模型微调、部署上线 —— 把整条链路拆成<strong>六层可查的技术栈</strong>，每一项按实际使用深度标注等级。</p>
+                <ul class="roles">
+                    <li>Python 后端</li>
+                    <li>大模型微调</li>
+                    <li>Agent 开发</li>
+                </ul>
+                <div class="hero-actions">
+                    <a class="btn" href="#stack">查看技术栈 <span aria-hidden="true">↓</span></a>
+                    <a class="btn btn-ghost" href="#projects">GitHub 项目 <span aria-hidden="true">↗</span></a>
+                </div>
+            </div>
+
+            <nav class="hero-index" aria-label="技术栈分层导航">
+                <a href="#l-lang"><span class="hi-idx">L01</span><span class="hi-name">语言</span><span class="hi-en">LANGUAGES</span></a>
+                <a href="#l-ai"><span class="hi-idx">L02</span><span class="hi-name">AI 与大模型</span><span class="hi-en">AI / LLM</span></a>
+                <a href="#l-backend"><span class="hi-idx">L03</span><span class="hi-name">后端与工程化</span><span class="hi-en">BACKEND</span></a>
+                <a href="#l-reverse"><span class="hi-idx">L04</span><span class="hi-name">逆向分析</span><span class="hi-en">REVERSE</span></a>
+                <a href="#l-frontend"><span class="hi-idx">L05</span><span class="hi-name">前端</span><span class="hi-en">FRONTEND</span></a>
+                <a href="#l-tools"><span class="hi-idx">L06</span><span class="hi-name">工具链</span><span class="hi-en">TOOLING</span></a>
+            </nav>
+        </section>
+
+        <section id="stack" class="wrap section" aria-labelledby="stack-title">
+            <header class="section-head reveal">
+                <div>
+                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>01 / Stack</p>
+                    <h2 id="stack-title">六层，逐层拆开。</h2>
+                </div>
+                <p class="section-note">等级依实际使用深度标注<br>精通 / 熟练 / 入门</p>
+            </header>
+
+            <div class="layers">
+                <article class="layer reveal" id="l-lang" style="--i:0">
+                    <div class="layer-id">
+                        <span class="idx">L01</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">06 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>语言</h3>
+                            <span class="layer-en">LANGUAGES</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">Python</span><span class="t-level">精通</span></li>
+                            <li class="token"><span class="t-name">Java</span><span class="t-level">熟练</span></li>
+                            <li class="token"><span class="t-name">C / C++</span><span class="t-level">精通</span></li>
+                            <li class="token"><span class="t-name">TypeScript</span></li>
+                            <li class="token"><span class="t-name">SQL</span><span class="t-level">熟练</span></li>
+                            <li class="token"><span class="t-name">Rust</span><span class="t-level">入门</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="layer reveal" id="l-ai" style="--i:1">
+                    <div class="layer-id">
+                        <span class="idx">L02</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">17 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>AI 与大模型</h3>
+                            <span class="layer-en">AI / LLM</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">PyTorch</span></li>
+                            <li class="token"><span class="t-name">YOLO / YOLOv8</span></li>
+                            <li class="token"><span class="t-name">RNN / LSTM</span></li>
+                            <li class="token"><span class="t-name">Seq2Seq + Attention</span></li>
+                            <li class="token"><span class="t-name">LoRA 微调</span></li>
+                            <li class="token"><span class="t-name">LangChain</span></li>
+                            <li class="token"><span class="t-name">LangGraph</span></li>
+                            <li class="token"><span class="t-name">RAG</span></li>
+                            <li class="token"><span class="t-name">LightRAG</span></li>
+                            <li class="token"><span class="t-name">Embedding</span></li>
+                            <li class="token"><span class="t-name">Prompt Engineering</span></li>
+                            <li class="token"><span class="t-name">Agent</span></li>
+                            <li class="token"><span class="t-name">工具调用</span></li>
+                            <li class="token"><span class="t-name">MCP</span></li>
+                            <li class="token"><span class="t-name">Workflow 编排</span></li>
+                            <li class="token"><span class="t-name">OpenCV</span></li>
+                            <li class="token"><span class="t-name">Neo4j</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="layer reveal" id="l-backend" style="--i:2">
+                    <div class="layer-id">
+                        <span class="idx">L03</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">17 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>后端与工程化</h3>
+                            <span class="layer-en">BACKEND</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">FastAPI</span></li>
+                            <li class="token"><span class="t-name">Flask</span></li>
+                            <li class="token"><span class="t-name">Spring Boot</span></li>
+                            <li class="token"><span class="t-name">Spring Cloud</span></li>
+                            <li class="token"><span class="t-name">Spring Security / JWT</span></li>
+                            <li class="token"><span class="t-name">RESTful API</span></li>
+                            <li class="token"><span class="t-name">WebSocket</span></li>
+                            <li class="token"><span class="t-name">MySQL</span></li>
+                            <li class="token"><span class="t-name">PostgreSQL</span></li>
+                            <li class="token"><span class="t-name">pgvector</span></li>
+                            <li class="token"><span class="t-name">Redis</span></li>
+                            <li class="token"><span class="t-name">Docker</span></li>
+                            <li class="token"><span class="t-name">Docker Compose</span></li>
+                            <li class="token"><span class="t-name">MinIO</span></li>
+                            <li class="token"><span class="t-name">Nginx</span></li>
+                            <li class="token"><span class="t-name">MQTT</span></li>
+                            <li class="token"><span class="t-name">SSH / paramiko</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="layer reveal" id="l-reverse" style="--i:3">
+                    <div class="layer-id">
+                        <span class="idx">L04</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">02 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>逆向分析</h3>
+                            <span class="layer-en">REVERSE</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">安卓逆向</span></li>
+                            <li class="token"><span class="t-name">Web 逆向</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="layer reveal" id="l-frontend" style="--i:4">
+                    <div class="layer-id">
+                        <span class="idx">L05</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">10 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>前端</h3>
+                            <span class="layer-en">FRONTEND</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">Vue 3</span></li>
+                            <li class="token"><span class="t-name">Vite</span></li>
+                            <li class="token"><span class="t-name">Pinia</span></li>
+                            <li class="token"><span class="t-name">Element Plus</span></li>
+                            <li class="token"><span class="t-name">Ant Design Vue</span></li>
+                            <li class="token"><span class="t-name">Less</span></li>
+                            <li class="token"><span class="t-name">HTML</span></li>
+                            <li class="token"><span class="t-name">CSS</span></li>
+                            <li class="token"><span class="t-name">JavaScript</span></li>
+                            <li class="token"><span class="t-name">TypeScript</span></li>
+                        </ul>
+                    </div>
+                </article>
+
+                <article class="layer reveal" id="l-tools" style="--i:5">
+                    <div class="layer-id">
+                        <span class="idx">L06</span>
+                        <span class="layer-tick" aria-hidden="true"></span>
+                        <span class="count">07 ITEMS</span>
+                    </div>
+                    <div class="layer-main">
+                        <div class="layer-title">
+                            <h3>工具链</h3>
+                            <span class="layer-en">TOOLING</span>
+                        </div>
+                        <ul class="tokens">
+                            <li class="token"><span class="t-name">PyQt5 / PyQt6</span></li>
+                            <li class="token"><span class="t-name">Scrapling</span></li>
+                            <li class="token"><span class="t-name">Claude Code</span></li>
+                            <li class="token"><span class="t-name">Codex</span></li>
+                            <li class="token"><span class="t-name">Cursor</span></li>
+                            <li class="token"><span class="t-name">Trae</span></li>
+                            <li class="token"><span class="t-name">Jujutsu</span></li>
+                        </ul>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="wrap section" aria-labelledby="projects-title">
+            <header class="section-head reveal">
+                <div>
+                    <p class="eyebrow"><span class="eyebrow-dot" aria-hidden="true"></span>02 / Open source</p>
+                    <h2 id="projects-title">几个公开仓库。</h2>
+                </div>
+                <p class="section-note">代码在 GitHub<br>链接直达仓库</p>
+            </header>
+
+            <div class="projects">
+                <a class="project reveal" href="https://github.com/The-Cooler/zst" target="_blank" rel="noopener" style="--i:0">
+                    <span class="p-id">P01</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">zst</span><span class="p-cn">自学通</span></h3>
+                        <p class="p-desc">基于 LangGraph 的个人知识库：上传 PDF / Word / Markdown 或抓取网页，LightRAG 做向量与图谱双路召回，Neo4j 输出可交互知识图谱。</p>
+                        <ul class="p-tags">
+                            <li>LangGraph</li>
+                            <li>LightRAG</li>
+                            <li>pgvector</li>
+                            <li>Neo4j</li>
+                            <li>FastAPI</li>
+                            <li>Vue</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="project reveal" href="https://github.com/The-Cooler/-elevator-platform" target="_blank" rel="noopener" style="--i:1">
+                    <span class="p-id">P02</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">-elevator-platform</span><span class="p-cn">电梯维保平台</span></h3>
+                        <p class="p-desc">老旧小区电梯故障报修与维保跟踪：面向业主、物业、维修员、管理员四类角色，串起报修、工单调度、预防性维保与数据分析预警。后端 Spring Boot，管理端与用户端各自独立，地图定位用高德 JS API。</p>
+                        <ul class="p-tags">
+                            <li>Spring Boot</li>
+                            <li>Vue 3</li>
+                            <li>MyBatis</li>
+                            <li>MySQL</li>
+                            <li>Redis</li>
+                            <li>Quartz</li>
+                            <li>ECharts</li>
+                            <li>高德地图</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="project reveal" href="https://github.com/The-Cooler/yolo_fall_down" target="_blank" rel="noopener" style="--i:2">
+                    <span class="p-id">P03</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">yolo_fall_down</span><span class="p-cn">摔倒检测</span></h3>
+                        <p class="p-desc">YOLOv8 + OpenCV 实时检测摔倒行为，按置信度与持续时间输出三档告警；Python 推理与 Java 业务微服务解耦，支持多路视频并发。</p>
+                        <ul class="p-tags">
+                            <li>YOLOv8</li>
+                            <li>OpenCV</li>
+                            <li>Python</li>
+                            <li>Java</li>
+                            <li>Redis</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="project reveal" href="https://github.com/The-Cooler/ssh-agent" target="_blank" rel="noopener" style="--i:3">
+                    <span class="p-id">P04</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">ssh-agent</span><span class="p-cn">远程运维 Agent</span></h3>
+                        <p class="p-desc">基于 pi SDK 的远程 SSH Agent：模型只能通过项目提供的 SSH 工具访问指定目标机器与目录，按会话、项目、全局三层白名单收敛可执行操作。</p>
+                        <ul class="p-tags">
+                            <li>TypeScript</li>
+                            <li>Node.js</li>
+                            <li>pi SDK</li>
+                            <li>SSH</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="project reveal" href="https://github.com/The-Cooler/langchain_lunwen" target="_blank" rel="noopener" style="--i:4">
+                    <span class="p-id">P05</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">langchain_lunwen</span><span class="p-cn">论文 AI 编写</span></h3>
+                        <p class="p-desc">LangChain + RAG 的论文生成流水线：从素材提取到向量库构建，Agent 按模板逐章写入，终端流式输出进度，最终产出 Word 文档。</p>
+                        <ul class="p-tags">
+                            <li>LangChain</li>
+                            <li>RAG</li>
+                            <li>向量库</li>
+                            <li>uv</li>
+                            <li>docx</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+
+                <a class="project reveal" href="https://github.com/The-Cooler/question_tool" target="_blank" rel="noopener" style="--i:5">
+                    <span class="p-id">P06</span>
+                    <div class="p-body">
+                        <h3><span class="p-name">question_tool</span><span class="p-cn">题目练习工具</span></h3>
+                        <p class="p-desc">基于 PyQt5 的桌面刷题工具：CSV 导入题库，随机抽题、提交判分、叉掉不再出现的题，并自动保存历史记录；另附 Windows 安装包打包流程。</p>
+                        <ul class="p-tags">
+                            <li>PyQt5</li>
+                            <li>Python</li>
+                            <li>CSV</li>
+                            <li>Inno Setup</li>
+                        </ul>
+                    </div>
+                    <span class="p-go" aria-hidden="true">↗</span>
+                </a>
+            </div>
+
+            <div class="more">
+                <a href="https://github.com/The-Cooler" target="_blank" rel="noopener">更多仓库 <span aria-hidden="true">↗</span></a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="foot">
+        <div class="wrap foot-inner">
+            <span class="foot-brand"><span class="mark" aria-hidden="true"></span>TECH STACK · 2026</span>
+            <a href="https://github.com/The-Cooler" target="_blank" rel="noopener">github.com/The-Cooler ↗</a>
+        </div>
+    </footer>
+
+    <script src="assets/main.js"></script>
 </body>
 </html>
