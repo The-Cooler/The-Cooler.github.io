@@ -402,39 +402,45 @@
 
         /* ---------- CC 用量截图 ---------- */
         .cc-stats {
-            margin-top: clamp(24px, 4vh, 34px);
-            max-width: 640px;
+            margin-top: clamp(18px, 2.8vh, 26px);
+            max-width: 460px;
             opacity: 0;
             animation: fade 0.9s ease 0.78s forwards;
         }
 
         .cc-cap {
             font-family: var(--font-mono);
-            font-size: 10.5px;
+            font-size: 10px;
             letter-spacing: 0.14em;
             color: var(--muted);
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .cc-shot {
             display: block;
             width: 100%;
             height: auto;
+            max-height: 300px;
+            object-fit: cover;
+            object-position: top;
             border: 1px solid var(--line);
             border-radius: 4px;
             background: var(--chip-bg);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.10);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.10);
             transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
 
         .cc-shot:hover {
             border-color: var(--accent);
-            box-shadow: 0 16px 48px rgba(31, 111, 156, 0.18);
+            box-shadow: 0 14px 40px rgba(31, 111, 156, 0.18);
         }
 
         @media (max-width: 720px) {
             .cc-stats {
                 max-width: 100%;
+            }
+            .cc-shot {
+                max-height: 240px;
             }
         }
 
