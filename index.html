@@ -73,7 +73,9 @@
                 </ul>
                 <div class="cc-stats reveal">
                     <p class="cc-cap">Claude Code 用量 · 2025.11 - 2026.11（53 周）</p>
-                    <img class="cc-shot" src="assets/cc-usage.png" alt="Claude Code 用量统计截图：53 周热力图、总成本 $3333.60、总请求 81573、Tokens 11.9B、缓存命中率 89.3%">
+                    <button class="cc-zoom" type="button" aria-label="放大查看用量统计截图">
+                        <img class="cc-shot" src="assets/cc-usage.png" alt="Claude Code 用量统计截图：53 周热力图、总成本 $3333.60、总请求 81573、Tokens 11.9B、缓存命中率 89.3%">
+                    </button>
                 </div>
                 <div class="hero-actions">
                     <a class="btn" href="#stack">查看技术栈 <span aria-hidden="true">↓</span></a>
@@ -337,6 +339,10 @@
             <a href="https://github.com/The-Cooler" target="_blank" rel="noopener">github.com/The-Cooler ↗</a>
         </div>
     </footer>
+
+    <div class="lightbox" id="lightbox" hidden tabindex="-1" role="dialog" aria-modal="true" aria-label="用量统计截图放大预览">
+        <img class="lightbox-img" src="" alt="">
+    </div>
 
     <script src="assets/main.js"></script>
 </body>

@@ -43,6 +43,38 @@
             if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onScheme);
             else if (typeof mq.addListener === 'function') mq.addListener(onScheme);
 
+            /* ---------- 灯箱 ---------- */
+            var zoomBtn = document.querySelector('.cc-zoom');
+            var lightbox = document.getElementById('lightbox');
+            var lightboxImg = lightbox ? lightbox.querySelector('.lightbox-img') : null;
+
+            if (zoomBtn && lightbox && lightboxImg) {
+                var openLightbox = function () {
+                    lightboxImg.src = zoomBtn.querySelector('.cc-shot').src;
+                    lightboxImg.alt = zoomBtn.querySelector('.cc-shot').alt;
+                    lightbox.hidden = false;
+                    document.body.style.overflow = 'hidden';
+                    void lightbox.offsetHeight;
+                    lightbox.classList.add('is-open');
+                    lightbox.focus();
+                };
+
+                var closeLightbox = function () {
+                    lightbox.classList.remove('is-open');
+                    document.body.style.overflow = '';
+                    window.setTimeout(function () {
+                        lightbox.hidden = true;
+                        lightboxImg.src = '';
+                    }, 280);
+                };
+
+                zoomBtn.addEventListener('click', openLightbox);
+                lightbox.addEventListener('click', closeLightbox);
+                document.addEventListener('keydown', function (e) {
+                    if (e.key === 'Escape' && !lightbox.hidden) closeLightbox();
+                });
+            }
+
             /* ---------- 网格画布 ---------- */
             var canvas = document.getElementById('grid');
             if (canvas && canvas.getContext) {
