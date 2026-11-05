@@ -71,6 +71,10 @@
                     <li>大模型微调</li>
                     <li>Agent 开发</li>
                 </ul>
+                <div class="cc-stats reveal">
+                    <p class="cc-cap">Claude Code 用量 · 2025.11 - 2026.11（53 周）</p>
+                    <img class="cc-shot" src="assets/cc-usage.png" alt="Claude Code 用量统计截图：53 周热力图、总成本 $3333.60、总请求 81573、Tokens 11.9B、缓存命中率 89.3%">
+                </div>
                 <div class="hero-actions">
                     <a class="btn" href="#stack">查看技术栈 <span aria-hidden="true">↓</span></a>
                     <a class="btn btn-ghost" href="#projects">GitHub 项目 <span aria-hidden="true">↗</span></a>
@@ -256,51 +260,49 @@
                     <span class="p-go" aria-hidden="true">↗</span>
                 </a>
 
-                <a class="project reveal" href="https://github.com/The-Cooler/-elevator-platform" target="_blank" rel="noopener" style="--i:1">
+                <a class="project reveal" href="https://github.com/The-Cooler/visio-diagram" target="_blank" rel="noopener" style="--i:1">
                     <span class="p-id">P02</span>
                     <div class="p-body">
-                        <h3><span class="p-name">-elevator-platform</span><span class="p-cn">电梯维保平台</span></h3>
-                        <p class="p-desc">老旧小区电梯故障报修与维保跟踪：面向业主、物业、维修员、管理员四类角色，串起报修、工单调度、预防性维保与数据分析预警。后端 Spring Boot，管理端与用户端各自独立，地图定位用高德 JS API。</p>
+                        <h3><span class="p-name">visio-diagram</span><span class="p-cn">Visio 图表 Skill</span></h3>
+                        <p class="p-desc">用 Microsoft Visio 生成 .vsdx 图的 Claude Skill：ER 图、流程图、时序图按规则拆分在 references/ 按需加载，脚本经合同校验后由本机 Visio COM 出图，支持分析并注册新模板。</p>
                         <ul class="p-tags">
-                            <li>Spring Boot</li>
-                            <li>Vue 3</li>
-                            <li>MyBatis</li>
-                            <li>MySQL</li>
-                            <li>Redis</li>
-                            <li>Quartz</li>
-                            <li>ECharts</li>
-                            <li>高德地图</li>
+                            <li>Claude Skill</li>
+                            <li>Visio COM</li>
+                            <li>ER 图</li>
+                            <li>流程图</li>
+                            <li>时序图</li>
+                            <li>模板注册</li>
                         </ul>
                     </div>
                     <span class="p-go" aria-hidden="true">↗</span>
                 </a>
 
-                <a class="project reveal" href="https://github.com/The-Cooler/yolo_fall_down" target="_blank" rel="noopener" style="--i:2">
+                <a class="project reveal" href="https://github.com/The-Cooler/Agent_demo" target="_blank" rel="noopener" style="--i:2">
                     <span class="p-id">P03</span>
                     <div class="p-body">
-                        <h3><span class="p-name">yolo_fall_down</span><span class="p-cn">摔倒检测</span></h3>
-                        <p class="p-desc">YOLOv8 + OpenCV 实时检测摔倒行为，按置信度与持续时间输出三档告警；Python 推理与 Java 业务微服务解耦，支持多路视频并发。</p>
+                        <h3><span class="p-name">Agent_demo</span><span class="p-cn">最小 Agent 实现</span></h3>
+                        <p class="p-desc">不依赖 LangGraph / LangChain 等 Agent 框架，从零实现最小可用 Agent：ReAct 循环、工具注册、多 session 与 context 管理、trace 全部手写，FastAPI 提供对话界面与接口文档。</p>
                         <ul class="p-tags">
-                            <li>YOLOv8</li>
-                            <li>OpenCV</li>
-                            <li>Python</li>
-                            <li>Java</li>
-                            <li>Redis</li>
+                            <li>ReAct</li>
+                            <li>工具调用</li>
+                            <li>多 session</li>
+                            <li>FastAPI</li>
+                            <li>uv</li>
                         </ul>
                     </div>
                     <span class="p-go" aria-hidden="true">↗</span>
                 </a>
 
-                <a class="project reveal" href="https://github.com/The-Cooler/ssh-agent" target="_blank" rel="noopener" style="--i:3">
+                <a class="project reveal" href="https://github.com/The-Cooler/ds-web-plug" target="_blank" rel="noopener" style="--i:3">
                     <span class="p-id">P04</span>
                     <div class="p-body">
-                        <h3><span class="p-name">ssh-agent</span><span class="p-cn">远程运维 Agent</span></h3>
-                        <p class="p-desc">基于 pi SDK 的远程 SSH Agent：模型只能通过项目提供的 SSH 工具访问指定目标机器与目录，按会话、项目、全局三层白名单收敛可执行操作。</p>
+                        <h3><span class="p-name">ds-web-plug</span><span class="p-cn">大飞鱼插件</span></h3>
+                        <p class="p-desc">运行于 DeepSeek 网页的油猴脚本：多模板自定义提示词在对话请求里注入一次即生效；附带大飞鱼桌宠挂件，支持拖拽、甩抛、点击回应与随机动作。</p>
                         <ul class="p-tags">
-                            <li>TypeScript</li>
-                            <li>Node.js</li>
-                            <li>pi SDK</li>
-                            <li>SSH</li>
+                            <li>Tampermonkey</li>
+                            <li>JavaScript</li>
+                            <li>提示词注入</li>
+                            <li>桌宠动画</li>
                         </ul>
                     </div>
                     <span class="p-go" aria-hidden="true">↗</span>
@@ -317,21 +319,6 @@
                             <li>向量库</li>
                             <li>uv</li>
                             <li>docx</li>
-                        </ul>
-                    </div>
-                    <span class="p-go" aria-hidden="true">↗</span>
-                </a>
-
-                <a class="project reveal" href="https://github.com/The-Cooler/question_tool" target="_blank" rel="noopener" style="--i:5">
-                    <span class="p-id">P06</span>
-                    <div class="p-body">
-                        <h3><span class="p-name">question_tool</span><span class="p-cn">题目练习工具</span></h3>
-                        <p class="p-desc">基于 PyQt5 的桌面刷题工具：CSV 导入题库，随机抽题、提交判分、叉掉不再出现的题，并自动保存历史记录；另附 Windows 安装包打包流程。</p>
-                        <ul class="p-tags">
-                            <li>PyQt5</li>
-                            <li>Python</li>
-                            <li>CSV</li>
-                            <li>Inno Setup</li>
                         </ul>
                     </div>
                     <span class="p-go" aria-hidden="true">↗</span>
